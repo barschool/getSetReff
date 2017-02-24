@@ -56,14 +56,14 @@ function getSetReff()
 
 
     //referrer or params?
-    if (document.location.search.indexOf(__cmp) != -1 || document.location.search.indexOf(__mdm) != -1 || document.location.search.indexOf(__srcs) != -1)
-    {
-        __gsr = "//campaign::c:["+gcP(__cmp)+"]m:["+gcP(__mdm)+"]s:["+gcP(__srcs)+"]";
+    if (document.location.search.indexOf(__cmp) != -1 || document.location.search.indexOf(__mdm) != -1 || document.location.search.indexOf(__srcs) != -1){
+      __gsr = "//campaign::c:["+gcP(__cmp)+"]m:["+gcP(__mdm)+"]s:["+gcP(__srcs)+"]";
+      __gsr += (document.location.search.indexOf("gclid") != -1) ? "g:["+gcP("gclid")+"]" : '';
+    } else if (document.location.search.indexOf("gclid") != -1){
+      __gsr = "//campaign::[adwords]";
+    } else {
+      __gsr = document.referrer;
     }
-    else { __gsr = document.referrer; }
-    //console.log(__gsr);
-    //get referrer domain & verify adwords
-    __gsr = ((document.location.search.indexOf("gclid") != -1) ? "//campaign::[adwords]" : __gsr); 
     __gsr = ((typeof __gsr == "undefined" || __gsr == "" || __gsr.indexOf(_reff[0].setDomain)!=-1) ? "(direct)" : __gsr.split('/')[2]);
 
     if (__asc)
