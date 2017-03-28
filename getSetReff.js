@@ -62,12 +62,16 @@ function getSetReff(){
     var __cmp = "utm_campaign";
     var __mdm = "utm_medium";
     var __srcs = "utm_source";
+    var __cnt = "utm_content";
+    var __id = "utm_id";
 
 
     //referrer or params?
     if (document.location.search.indexOf(__cmp) != -1 || document.location.search.indexOf(__mdm) != -1 || document.location.search.indexOf(__srcs) != -1){
       __gsr = "//campaign::c:["+gcP(__cmp)+"]m:["+gcP(__mdm)+"]s:["+gcP(__srcs)+"]";
       __gsr += (document.location.search.indexOf("gclid") != -1) ? "g:["+gcP("gclid")+"]" : '';
+      __gsr += (document.location.search.indexOf(__cnt) != -1) ? "ct:["+gcP(__cnt)+"]" : '';
+      __gsr += (document.location.search.indexOf(__id) != -1) ? "id:["+gcP(__id)+"]" : '';
     } else if (document.location.search.indexOf("gclid") != -1) {
         __gsr = "//campaign::[adwords]" + "g:["+gcP("gclid")+"]";
     } else {
