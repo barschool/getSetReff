@@ -1,0 +1,24 @@
+{
+  "name": "gsr",
+  "version": "1.0.0",
+  "description": "Store all referrers of website visitors\r ===============================================",
+  "main": "getSetReff.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/barschool/getSetReff.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/barschool/getSetReff/issues"
+  },
+  "homepage": "https://github.com/barschool/getSetReff#readme",
+  "dependencies": {
+    "gulp": "^3.9.1",
+    "gulp-minify": "^0.0.15",
+    "gulp-rename": "^1.2.2"
+  }
+}

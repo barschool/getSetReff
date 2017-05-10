@@ -48,7 +48,8 @@ function getSetReff(){
 
     function gcP(p) {
       if (document.location.search.indexOf(p) != -1) {
-         return (""+document.location.search.split(p+"=")[1]).split("&")[0];
+        var param = (""+document.location.search.split(p+"=")[1]).split("&")[0];
+        return param.replace(/\/$/, "");
       } else {
         return "not-set";
       }
