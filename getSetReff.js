@@ -32,8 +32,9 @@ function getSetReff(){
     }
 
     var _reff=[];
-    _reff = dataLayer.filter(function (value) {if (value.setDomain)  return value; });
-    if (_reff.length === 0) _reff[0]={'setDomain':document.location.hostname};
+    var cookieDomain = '.' + document.location.hostname.split('.').slice(-2).join('.')
+    //_reff = dataLayer.filter(function (value) {if (value.setDomain)  return value; });
+    if (_reff.length === 0) _reff[0]={'setDomain':cookieDomain};
 
     function rC(k){
       return(document.cookie.match('(^|; )'+k+'=([^;]*)')||0)[2]
